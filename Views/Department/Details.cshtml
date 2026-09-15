@@ -1,0 +1,56 @@
+﻿@model Product.Models.Department
+
+@{
+    ViewData["Title"] = "Department Details";
+}
+
+<div class="container py-5">
+
+    <div class="card shadow border-0 rounded-4">
+
+        <div class="card-header bg-dark text-white">
+            <h3 class="mb-0">Department Details</h3>
+        </div>
+
+        <div class="card-body p-4">
+
+            <h4 class="fw-bold">
+                @Model.Name
+            </h4>
+
+            <p class="text-muted">
+                Department ID: @Model.DepartmentId
+            </p>
+
+            <hr />
+
+            <h5 class="fw-bold mb-3">
+                Trainees
+            </h5>
+
+            @foreach (var trainee in Model.Trainees)
+            {
+                <div class="d-flex align-items-center mb-3">
+
+                    <img src="@trainee.Image"
+                         width="50"
+                         height="50"
+                         class="rounded-circle me-3" />
+
+                    <div>
+                        <strong>@trainee.Name</strong>
+                    </div>
+
+                </div>
+            }
+
+            <a asp-action="ShowAll"
+               class="btn btn-outline-dark mt-3">
+                Back
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

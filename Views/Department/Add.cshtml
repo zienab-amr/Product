@@ -1,0 +1,11 @@
+﻿@model Department
+
+<form asp-action="SaveAdd" asp-controller="Department" method="post">
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Department</label>
+        <input asp-for="Name" type="text" class="form-control"  >
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

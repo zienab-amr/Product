@@ -1,0 +1,109 @@
+﻿@model Product.ModelVM.TraineeAdvertisementColorBranchesTempViewModel
+
+@{
+    ViewData["Title"] = "Trainee Details";
+}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+
+                <div class="bg-dark text-white text-center py-4">
+                    <h3 class="fw-bold mb-1">Trainee Details</h3>
+                    <p class="mb-0 opacity-75">
+                        Training Information
+                    </p>
+                </div>
+
+                <div class="card-body p-5">
+
+                    <div class="text-center mb-4">
+
+                        <img src="@Model.TraineeImage"
+                             alt="@Model.TraineeName"
+                             width="120"
+                             height="120"
+                             class="rounded-circle shadow object-fit-cover mb-3" />
+
+                        <h3 class="fw-bold">
+                            @Model.TraineeName
+                        </h3>
+
+                        <span class="badge bg-primary px-3 py-2">
+                            @Model.DepartmentName
+                        </span>
+
+                    </div>
+
+                    <hr />
+
+                    <div class="row g-3 mt-2">
+
+                        <div class="col-md-6">
+                            <div class="bg-light rounded-3 p-3">
+                                <small class="text-muted d-block">
+                                    Advertisement
+                                </small>
+                                <strong>
+                                    @ViewData["Advertisement"]
+                                </strong>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="bg-light rounded-3 p-3">
+                                <small class="text-muted d-block">
+                                    Color
+                                </small>
+                                <strong>
+                                    @ViewData["Color"]
+                                </strong>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="bg-light rounded-3 p-3">
+                                <small class="text-muted d-block">
+                                    Branches
+                                </small>
+                                <strong>
+                                    @ViewBag.Branches
+                                </strong>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="bg-light rounded-3 p-3">
+                                <small class="text-muted d-block">
+                                    Temperature
+                                </small>
+                                <strong>
+                                    @ViewBag.Temp
+                                </strong>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="text-center mt-4">
+
+                        <a asp-action="ShowAll"
+                           class="btn btn-outline-dark rounded-pill px-4">
+                            Back to Trainees
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

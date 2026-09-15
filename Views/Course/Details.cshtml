@@ -1,0 +1,176 @@
+﻿@model Course
+
+@{
+    ViewData["Title"] = "Course Details";
+}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+
+                <div class="bg-dark text-white text-center py-4">
+
+                    <h3 class="fw-bold mb-1">
+                        Course Details
+                    </h3>
+
+                    <p class="mb-0 opacity-75">
+                        Course Information
+                    </p>
+
+                </div>
+
+                <div class="card-body p-5">
+
+                    <div class="text-center mb-4">
+
+                        <h3 class="fw-bold">
+                            @Model.Name
+                        </h3>
+
+                        <span class="badge bg-primary px-3 py-2">
+                            @Model.Department.Name
+                        </span>
+
+                    </div>
+
+                    <hr />
+
+                    <div class="row g-3 mt-2">
+
+                        <div class="col-md-6">
+
+                            <div class="bg-light rounded-3 p-3">
+
+                                <small class="text-muted d-block">
+                                    Course ID
+                                </small>
+
+                                <strong>
+                                    @Model.Id
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="bg-light rounded-3 p-3">
+
+                                <small class="text-muted d-block">
+                                    Course Name
+                                </small>
+
+                                <strong>
+                                    @Model.Name
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="bg-light rounded-3 p-3">
+
+                                <small class="text-muted d-block">
+                                    Degree
+                                </small>
+
+                                <strong>
+                                    @Model.Degree
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="bg-light rounded-3 p-3">
+
+                                <small class="text-muted d-block">
+                                    Minimum Degree
+                                </small>
+
+                                <strong>
+                                    @Model.MinDegree
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="bg-light rounded-3 p-3">
+
+                                <small class="text-muted d-block">
+                                    Course Hours
+                                </small>
+
+                                <strong>
+                                    @Model.CourseHours
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="bg-light rounded-3 p-3">
+
+                                <small class="text-muted d-block">
+                                    Department ID
+                                </small>
+
+                                <strong>
+                                    @Model.DepartmentId
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-12">
+
+                            <div class="bg-light rounded-3 p-3">
+
+                                <small class="text-muted d-block">
+                                    Department
+                                </small>
+
+                                <strong>
+                                    @Model.Department.Name
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="text-center mt-4">
+
+                        <a asp-action="ShowAll"
+                           class="btn btn-outline-dark rounded-pill px-4">
+                            Back to Courses
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

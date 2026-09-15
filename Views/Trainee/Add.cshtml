@@ -1,0 +1,36 @@
+﻿@model Trainee
+
+<form asp-action="SaveAdd" asp-controller="Trainee" method="post" enctype="multipart/form-data">
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Instructor Name</label>
+        <input asp-for="Name" type="text" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Image" class="form-label">Image</label>
+        <input name="imageFile" type="file" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="DepartmentId" class="form-label">
+            Department
+        </label>
+
+        <select asp-for="DepartmentId"
+                class="form-select">
+
+            <option value="">-- Select Department --</option>
+
+            @foreach (var department in ViewBag.Departments)
+            {
+                <option value="@department.DepartmentId">
+                    @department.Name
+                </option>
+            }
+
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

@@ -1,0 +1,117 @@
+﻿@model Course
+
+@{
+    ViewData["Title"] = "Add Course";
+}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+
+                <div class="bg-dark text-white text-center py-4">
+
+                    <h3 class="fw-bold mb-1">
+                        Add Course
+                    </h3>
+
+                    <p class="mb-0 opacity-75">
+                        Enter Course Information
+                    </p>
+
+                </div>
+
+                <div class="card-body p-5">
+
+                    <form asp-action="SaveAdd"
+                          asp-controller="Course"
+                          method="post">
+
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label">
+                                Course Name
+                            </label>
+
+                            <input asp-for="Name"
+                                   type="text"
+                                   class="form-control" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Degree" class="form-label">
+                                Degree
+                            </label>
+
+                            <input asp-for="Degree"
+                                   type="number"
+                                   class="form-control" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="MinDegree" class="form-label">
+                                Minimum Degree
+                            </label>
+
+                            <input asp-for="MinDegree"
+                                   type="number"
+                                   class="form-control" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="CourseHours" class="form-label">
+                                Course Hours
+                            </label>
+
+                            <input asp-for="CourseHours"
+                                   type="number"
+                                   class="form-control" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="DepartmentId" class="form-label">
+                                Department
+                            </label>
+
+                            <select asp-for="DepartmentId"
+                                    class="form-select">
+
+                                <option value="">-- Select Department --</option>
+
+                                @foreach (var department in ViewBag.Departments)
+                                {
+                                    <option value="@department.DepartmentId">
+                                        @department.Name
+                                    </option>
+                                }
+
+                            </select>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+
+                            <a asp-action="ShowAll"
+                               class="btn btn-outline-dark">
+                                Back
+                            </a>
+
+                            <button type="submit"
+                                    class="btn btn-primary">
+                                Submit
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

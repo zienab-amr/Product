@@ -1,0 +1,163 @@
+﻿@model Instructor
+
+@{
+    ViewData["Title"] = "Edit Instructor";
+}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+
+                <div class="bg-dark text-white text-center py-4">
+
+                    <h3 class="fw-bold mb-1">
+                        Edit Instructor
+                    </h3>
+
+                    <p class="mb-0 opacity-75">
+                        Update Instructor Information
+                    </p>
+
+                </div>
+
+                <div class="card-body p-5">
+
+                    <form asp-action="Edit"
+                          asp-controller="Instructor"
+                          method="post"
+                          enctype="multipart/form-data">
+
+                        <input asp-for="InstructorId"
+                               type="hidden" />
+
+                        <div class="mb-3">
+
+                            <label asp-for="Name"
+                                   class="form-label">
+                                Instructor Name
+                            </label>
+
+                            <input asp-for="Name"
+                                   type="text"
+                                   class="form-control" />
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Image
+                            </label>
+
+                            <input name="imageFile"
+                                   type="file"
+                                   class="form-control" />
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="Address"
+                                   class="form-label">
+                                Address
+                            </label>
+
+                            <input asp-for="Address"
+                                   type="text"
+                                   class="form-control" />
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="Email"
+                                   class="form-label">
+                                Email
+                            </label>
+
+                            <input asp-for="Email"
+                                   type="email"
+                                   class="form-control" />
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="PhoneNumber"
+                                   class="form-label">
+                                Phone Number
+                            </label>
+
+                            <input asp-for="PhoneNumber"
+                                   type="text"
+                                   class="form-control" />
+
+                        </div>
+
+                        <div class="mb-3">
+
+                            <label asp-for="Salary"
+                                   class="form-label">
+                                Salary
+                            </label>
+
+                            <input asp-for="Salary"
+                                   type="number"
+                                   class="form-control" />
+
+                        </div>
+
+                        <div class="mb-4">
+
+                            <label asp-for="DepartmentId"
+                                   class="form-label">
+                                Department
+                            </label>
+
+                            <select asp-for="DepartmentId"
+                                    class="form-select">
+
+                                <option value="">
+                                    -- Select Department --
+                                </option>
+
+                                @foreach (var department in ViewBag.Departments)
+                                {
+                                    <option value="@department.DepartmentId">
+                                        @department.Name
+                                    </option>
+                                }
+
+                            </select>
+
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+
+                            <a asp-action="ShowAll"
+                               class="btn btn-outline-dark">
+                                Back
+                            </a>
+
+                            <button type="submit"
+                                    class="btn btn-primary">
+                                Save Changes
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

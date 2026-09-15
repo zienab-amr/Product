@@ -1,0 +1,166 @@
+﻿@model Product.Models.Instructor
+
+@{
+    ViewData["Title"] = "Instructor Details";
+}
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+
+                <div class="bg-dark text-white text-center py-4">
+
+                    <h3 class="fw-bold mb-1">
+                        Instructor Details
+                    </h3>
+
+                    <p class="mb-0 opacity-75">
+                        Instructor Information
+                    </p>
+
+                </div>
+
+                <div class="card-body p-5">
+
+                    <div class="text-center mb-4">
+
+                        <img src="@Model.Image"
+                             alt="@Model.Name"
+                             width="130"
+                             height="130"
+                             class="rounded-circle shadow object-fit-cover mb-3" />
+
+                        <h3 class="fw-bold">
+                            @Model.Name
+                        </h3>
+
+                        <span class="badge bg-primary px-3 py-2">
+                            @Model.Department.Name
+                        </span>
+
+                    </div>
+
+                    <hr />
+
+                    <div class="row g-3 mt-2">
+
+                        <div class="col-md-6">
+
+                            <div class="bg-light rounded-3 p-3">
+
+                                <small class="text-muted d-block">
+                                    Address
+                                </small>
+
+                                <strong>
+                                    @Model.Address
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="bg-light rounded-3 p-3">
+
+                                <small class="text-muted d-block">
+                                    Email
+                                </small>
+
+                                <strong>
+                                    @Model.Email
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="bg-light rounded-3 p-3">
+
+                                <small class="text-muted d-block">
+                                    Phone Number
+                                </small>
+
+                                <strong>
+                                    @Model.PhoneNumber
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="bg-light rounded-3 p-3">
+
+                                <small class="text-muted d-block">
+                                    Salary
+                                </small>
+
+                                <strong>
+                                    @Model.Salary
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="bg-light rounded-3 p-3">
+
+                                <small class="text-muted d-block">
+                                    Department ID
+                                </small>
+
+                                <strong>
+                                    @Model.DepartmentId
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="bg-light rounded-3 p-3">
+
+                                <small class="text-muted d-block">
+                                    Department
+                                </small>
+
+                                <strong>
+                                    @Model.Department.Name
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="text-center mt-4">
+
+                        <a asp-action="ShowAll"
+                           class="btn btn-outline-dark rounded-pill px-4">
+                            Back to Instructors
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
